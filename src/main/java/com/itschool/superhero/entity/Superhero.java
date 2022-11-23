@@ -22,6 +22,12 @@ public class Superhero {
 
     private String superpower;
 
-    @OneToMany
+    @OneToMany(mappedBy = "superhero", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Pokemon> pokemons = new ArrayList<>();
+
+    public void addPokemonToSuperhero(Pokemon p) {
+        pokemons.add(p);
+        p.setSuperhero(this);
+
+    }
 }
