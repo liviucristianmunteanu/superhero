@@ -46,16 +46,12 @@ public class AppCommandRunner implements CommandLineRunner {
 
 
             superheroRepository.save(superhero);
-
-            //System.out.println(superheroRepository.findByNameEndingWith("man"));
-            //System.out.println(superheroRepository.findByNameStartingWith("man"));
-            //System.out.println(superheroRepository.findDistinctByNameOrderByNameDesc("man"));
-            //System.out.println(superheroRepository.findByIdLessThanEqual(String.valueOf(10L)));
-
         }
-
-
-
+        System.out.println(superheroRepository.findByNameEndingWith("man"));
+        System.out.println(superheroRepository.findByNameStartingWith("super"));
+        System.out.println(pokemonRepository.findPokemonDistinctByName());
+        System.out.println(superheroRepository.findAllSuperheroesByIdLessThanEqual(10L));
+        System.out.println(superheroRepository.findAllSuperheroesIsNull());
 
     }
 }
