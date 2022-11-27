@@ -19,5 +19,6 @@ public class Pokemon {
 
     @ManyToOne
     @JoinColumn(name = "superhero_id")
+    @ToString.Exclude
     private Superhero superhero;
 }
